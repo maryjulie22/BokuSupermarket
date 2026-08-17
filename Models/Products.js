@@ -21,9 +21,13 @@ price:{
 quantity:{
     type: Number,
     required: true
+ },
 },
-timestamps: true
-});
+{timestamps: true}
+
+);
 
 //create model
 const Product = mongoose.model('Product', productSchema);
+
+module.exports = Product;
