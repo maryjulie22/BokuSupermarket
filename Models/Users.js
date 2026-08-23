@@ -20,13 +20,17 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    HasAdminAccess:{
+        type: Boolean,
+        default: false
+    },
     phone:{
         type: String,
         required: true
     },
     role:{
         type: String,
-        enum: ['user', 'admin'],
+        enum: ['superadmin','storekeeper','salesperson','user'],
         default: 'user'
     },
 },
@@ -36,3 +40,4 @@ const userSchema = new mongoose.Schema({
 
 //create model
 const User = mongoose.model('User', userSchema);
+module.exports = User;
